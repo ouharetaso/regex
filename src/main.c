@@ -53,7 +53,7 @@ int main(int argc, char** argv){
 
     root = expr(&head.next);
 
-    //printTree(root, 0);
+    printTree(root, 0);
 
     Inst inst[REGEX_INST_MAX];
     int pos = 0;

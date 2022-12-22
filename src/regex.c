@@ -76,7 +76,11 @@ int convert(Node* node, Inst* inst, int* pos){
 int recursive(Inst* pc, char* sp){
     switch(pc->opcode){
         case Char:
-            if(*sp != pc->c) return 0;
+            if(*sp != pc->c) {
+                if( pc->c != '\0' ){
+                    return 0;
+                }
+            }
             return recursive(pc+1, sp+1);
             break;
         case Match:
